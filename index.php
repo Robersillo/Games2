@@ -1,0 +1,233 @@
+<?php session_start(); ?>
+<html>
+<head>
+<meta charset="utf-8">
+     <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="css/form.css">
+     <script src="js/jquery.js"></script>
+     <script src="js/jquery-migrate-1.1.1.js"></script>
+     <script src="js/forms.js"></script>
+
+     <script>
+
+
+     </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>GameOnline</title>
+<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+
+<link href="css_pirobox/white/style.css" media="screen" title="shadow" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/piroBox.1_2.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$().piroBox({
+			my_speed: 600, //animation speed
+			bg_alpha: 0.5, //background opacity
+			radius: 4, //caption rounded corner
+			scrollImage : false, // true == image follows the page, false == image remains in the same open position
+			pirobox_next : 'piro_next', // Nav buttons -> piro_next == inside piroBox , piro_next_out == outside piroBox
+			pirobox_prev : 'piro_prev',// Nav buttons -> piro_prev == inside piroBox , piro_prev_out == outside piroBox
+			close_all : '.piro_close',// add class .piro_overlay(with comma)if you want overlay click close piroBox
+			slideShow : 'slideshow', // just delete slideshow between '' if you don't want it.
+			slideSpeed : 4 //slideshow duration in seconds(3 to 6 Recommended)
+	});
+});
+</script>
+
+</head>
+<body>
+
+<div id="templatemo_body_wrapper">
+<div id="templatemo_wrapper">
+
+	<div id="tempaltemo_header">
+    	<span id="header_icon"></span>
+    	<div id="header_content">
+        	<div id="site_title">
+				<a href="#" rel="nofollow" target="_parent"><img src="images/templatemo_logo.png" alt="LOGO" /></a>            </div>
+            <p><span style="color:#000">Videojuegos jugados vía Internet independientemente de la plataforma.Puede tratarse de videojuegos multijugador, en los que se juega con otras personas o videojuegos de navegador que se descargan desde la web y se ejecutan en el navegador.</span></p>
+		       <?php
+		  		  if(isset($_SESSION['nivel']) && $_SESSION['nivel'] == '1')
+		              {
+					  ?>
+            <div>
+              <a href="administrador.php" class="detail float_r">ADMINISTRAR</a>
+            </div>
+            <?php
+			} 		 
+			?>
+            
+		</div>
+    </div> <!-- end of header -->
+	
+	<?php
+		  		  if(isset($_SESSION['nivel']) && $_SESSION['nivel'] == '1' | '2')
+		              {
+					  ?>
+					  
+					  <span id="letra_2">
+					 <h6> Usuario Conectado </h6>
+					  </span>
+					  
+	<div id="usuario">
+	<span id="letra_3">
+					  Usuario:
+					  </span>
+		<span id="letra">
+		<?php
+		echo $_SESSION['usuario'];
+		?>
+		</span>
+		</div>
+      <?php
+			} 		 
+			?>
+			
+    <div id="templatemo_main_top"></div>
+    <div id="templatemo_main"><span id="main_top"></span><span id="main_bottom"></span>
+    	
+        <div id="templatemo_sidebar">
+        
+        	<div id="templatemo_menu">
+                <ul>
+                    <li><a href="index.php" rel="nofollow" target="_parent">Inicio</a></li>
+                    <li><a href="noticias.php" target="_parent">Noticias</a></li>
+                    <li><a rel="nofollow" href="foro.php" target="_parent">Foro</a></li>
+                    <li><a rel="nofollow" href="livetream.php" target="_parent">LiveStreams</a></li>
+                    <li><a rel="nofollow" href="consejo.php" target="_parent">Consejos del Dia</a></li>
+                    <li><a rel="nofollow" href="contactar.php" target="_parent">Contactanos</a></li>
+              </ul>    	
+            </div> <!-- end of templatemo_menu -->
+        
+        	<div class="sidebar_box">
+            	<div class="sb_title">Login</div>
+                <div class="sb_content">
+                	<div id="login_form">
+                        <form method="post" action="validar.php">
+                        	<p><span>Nombre de Usuario:</span>
+                              <input type="text" id="login" name="login" class="login_input" />
+                            </p>
+                            <p><span>Clave:</span>
+                              <input type="password" id="clave" name="clave" class="login_input" />
+                            </p>
+                            <p>
+                              <input type="submit" name="submit" id="login_submit" value=" " />
+                            </p>
+                            <p>&nbsp;</p>
+                        </form>
+                        
+                        <div id="cerrar_submit">
+                        <form>
+                        <input name="submit" type="submit" id="cerrar_submit" formaction="salir.php" value=" " />
+                        </form>
+                        </div>
+                        
+                        <br>
+                        <br>
+                         <div id="crear_submit">
+                        <form>
+                        <input name="submit" type="submit" id="crear_submit" formaction="salir.php" value=" " />
+                        </form>
+                        </div>
+                        
+					</div>                  
+                </div>
+                <div class="sb_bottom"></div>            
+            </div>
+            
+            <div class="sidebar_box">
+              <div class="sb_content"></div>
+               
+              <div class="sb_bottom"></div>  
+                        
+            </div>
+            
+            <div class="cleaner"></div>
+        </div> <!-- end of sidebar -->
+        
+        <div id="templatemo_content">
+        	   
+            <div class="content_box">
+            	<center><h2>Noticias Principales</h2></center>
+                <br>
+                <br>
+                <a rel="nofollow" href="noticias.php" target="_parent"><img class="image_wrapper image_fl" src="images/templatemo_image_01.jpg" alt="Image 1" /></a>
+              <h5>World of Warcraft</h5>
+                <p>Warlords of Draenor™ — Reporte de Situación:</p>
+                <p>Es año nuevo y 2014 va a ser un gran año para World of Warcraft. En noviembre el juego cumple 10 años de aniversario y la serie completa de Warcraft cumple 20 años.</p>
+                <p><a href="noticias.php">Lee Mas</a></p>
+              <div class="cleaner h30"></div>
+                <a rel="nofollow" href="noticias.php" target="_parent"><img class="image_wrapper image_fl" src="images/templatemo_image_02.jpg" alt="Image 2" /></a>
+              <h5>League of Leguends</h5>
+              <p> La leyenda de Riven Espadragón:</p>
+              <p>uenta una leyenda que había una mujer cuya espada había sido forjada en el fuego de un dragón y que un día, tras haberse librado una sangrienta batalla</p>
+              <p> <a href="noticias.php">Lee Mas</a></p>
+          </div>
+            
+            <div class="content_box">
+            	
+                <div class="col_w290 float_l">
+                
+                  <h2 class="title_icon why_choose_us">REGLAS</h2>
+                    
+                  <p>1. Jugarás Videojuegos por sobre todas las cosas.</p>
+                    <p>2. Tendrás el Counter Strike 1.6 instalado sin importar cuantas versiones nuevas hayan salido.                    </p>
+                    <p>3. Deberás ver los Screenshots de todo buen GAMEPLAY.                    </p>
+                    <p>4. Olvídate de todo lo demás al Jugar. </p>
+                    <ul class="tmo_list">
+                      	<li><p> <a href="reglas.php" target="_blank">Lee Mas</a></p></li>
+                  	</ul>
+				</div>
+                
+                <div class="col_w290 cw290_last float_r">
+                
+                  <h2 class="title_icon new_services">Redes Sociales</h2>
+                    
+                  
+					<ul class="tmo_list">
+                    	<li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+                      	<li><a href="https://twitter.com/" target="_blank">Twitter</a></li>
+                        <li><a href="http://es-es.twitch.tv/robersillo" target="_blank">twitch TV</a></li>
+                  </ul>
+				</div>
+                
+                <div class="cleaner"></div>
+            </div>
+            
+            <div class="content_box last_box">
+            	<center><h2>Mejores Screenshots de la Semana</h2></center>
+                <br>
+                <br>       
+                <div id="gallery">
+					<a href="images/gallery/image_01_b.jpg" class="pirobox" title="For the ALIANCE"><img src="images/gallery/image_01.jpg" alt="1" /></a>
+                    <a href="images/gallery/image_02_b.jpg" class="pirobox" title="WIN LOL"><img src="images/gallery/image_02.jpg" alt="2" /></a>
+                    <a href="images/gallery/image_03_b.jpg" class="pirobox" title="Mejor Hermandad Ragnaros"><img src="images/gallery/image_03.jpg" alt="3" /></a>
+                </div> <!-- end of Gallery -->
+                
+              <div class="cleaner h20"></div>
+            </div>
+            
+        </div>
+        
+        <div class="cleaner"></div>    
+    </div>
+    
+    <div id="templatemo_main_bottom">
+    </div>
+
+</div> <!-- end of wrapper -->
+</div>
+
+<div id="templatemo_footer_wrapper">
+	<div id="templatemo_footer">
+        Copyright © 2014 <a href="index.php">Game Online</a> | 
+        Designed by <a rel="nofollow" href="https://www.facebook.com/roberto.fernandez.9674" target="_parent">Roberto Fernandez</a> |
+    </div>
+</div>
+
+
+<script type='text/javascript' src='js/logging.js'></script>
+</body>
+</html>
