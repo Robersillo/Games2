@@ -65,20 +65,20 @@ $(document).ready(function() {
               <a href="administrador.php" class="detail float_r">ADMINISTRAR</a>
             </div>
             <?php
-			} 		 
+			}
 			?>
-            
+
 		</div>
     </div> <!-- end of header -->
 		<?php
 		  		  if(isset($_SESSION['nivel']) && $_SESSION['nivel'] == '1')
 		              {
 					  ?>
-					  
+
 					  <span id="letra_2">
 					 <h6> Usuario Conectado </h6>
 					  </span>
-					  
+
 	<div id="usuario">
 	<span id="letra_3">
 					  Usuario:
@@ -90,16 +90,16 @@ $(document).ready(function() {
 		</span>
 		</div>
       <?php
-			} 		 
+			}
 			?>
-		
-		
+
+
     <div id="templatemo_main_top"></div>
     <div id="templatemo_main"><span id="main_top"></span><span id="main_bottom"></span>
-    	
+
         <div id="templatemo_sidebar">
-        
-		
+
+
         	<div id="templatemo_menu">
                 <ul>
                     <li><a href="index.php" rel="nofollow" target="_parent">Inicio</a></li>
@@ -108,9 +108,9 @@ $(document).ready(function() {
 					<li><a rel="nofollow" href="mconsejo.php" target="_parent">Modificar Consejos</a></li>
 					<li><a rel="nofollow" href="Alivetream.php" target="_parent">Agregar LiveStreams</a></li>
 
-              </ul>    	
+              </ul>
             </div> <!-- end of templatemo_menu -->
-        
+
         	<div class="sidebar_box">
             	<div class="sb_title">Login</div>
                 <div class="sb_content">
@@ -127,13 +127,13 @@ $(document).ready(function() {
                             </p>
                             <p>&nbsp;</p>
                         </form>
-                        
+
                         <div id="cerrar_submit">
                         <form>
                         <input name="submit" type="submit" id="cerrar_submit" formaction="salir.php" value=" " />
                         </form>
                         </div>
-                        
+
                         <br>
                         <br>
                          <div id="crear_submit">
@@ -141,24 +141,24 @@ $(document).ready(function() {
                         <input name="submit" type="submit" id="crear_submit" formaction="salir.php" value=" " />
                         </form>
                         </div>
-                        
-					</div>                  
+
+					</div>
                 </div>
-                <div class="sb_bottom"></div>            
+                <div class="sb_bottom"></div>
             </div>
-            
+
             <div class="sidebar_box">
               <div class="sb_content"></div>
-               
-              <div class="sb_bottom"></div>  
-                        
+
+              <div class="sb_bottom"></div>
+
             </div>
-            
+
             <div class="cleaner"></div>
         </div> <!-- end of sidebar -->
-        
+
         <div id="templatemo_content">
-		
+
 		<br>
 		<br>
 		<br>
@@ -171,12 +171,12 @@ $(document).ready(function() {
         	<center><h2>Datos de Mensajes</h2></center>
 <br>
 <br>
-			
-          		<?php
-			  
-include('conex.php'); 
 
-$result = mysql_query("select * from consultas Order By cedula");
+          		<?php
+
+include('conex.php');
+
+$result = mysqli_query($link,"select * from consultas Order By cedula");
 
 ?>
 <table class="tablanoticia">
@@ -190,7 +190,7 @@ $result = mysql_query("select * from consultas Order By cedula");
 					  <td>Direccion</td>
            	        </tr>
                     <?php
-while ($row=mysql_fetch_array($result))
+while ($row=mysqli_fetch_array($result))
 {
 echo '<tr><td>'.$row["id_consulta"].'</td>';
 echo '<td>'.$row["cedula"].'</td>';
@@ -200,25 +200,25 @@ echo '<td>'.$row["telefono"].'</td>';
 echo '<td>'.$row["email"].'</td>';
 echo '<td>'.$row["direccion"].'</td>';
 }
-mysql_free_result($result);
+mysqli_free_result($result);
 
 
 ?>
-   </table>         			
-            
+   </table>
+
               <div class="cleaner h30"></div>
-			
-            
-			
+
+
+
           </div>
-            
+
             <div class="content_box">
 			<center>
 	<?php
-			  
-include('conex.php'); 
 
-$result = mysql_query("select * from consultas");
+include('conex.php');
+
+$result = mysqli_query($link,"select * from consultas");
 
 ?>
 <table class="tablaconsejo">
@@ -227,54 +227,54 @@ $result = mysql_query("select * from consultas");
               	      <td>Consulta</td>
            	        </tr>
                     <?php
-while ($row=mysql_fetch_array($result))
+while ($row=mysqli_fetch_array($result))
 {
 echo '<tr><td>'.$row["id_consulta"].'</td>';
 echo '<td>'.$row["consulta"].'</td>';
 }
-mysql_free_result($result);
+mysqli_free_result($result);
 
 
 ?>
-   </table> 
-</center>   
+   </table>
+</center>
 
                 <div class="col_w290 float_l">
-                
+
    			  </div>
-                
+
                 <div class="col_w290 cw290_last float_r">
-                
+
 				</div>
-                
+
                 <div class="cleaner"></div>
             </div>
-			
+
 			<br>
 			<br>
             <br>
 			<br>
 			<br>
 
-			
+
             <div class="content_box last_box">
-            	
+
                <h2>Mejores Screenshots de la Semana</h2>
-                
+
                 <div id="gallery">
 					<a href="images/gallery/image_01_b.jpg" class="pirobox" title="For the ALIANCE"><img src="images/gallery/image_01.jpg" alt="1" /></a>
                     <a href="images/gallery/image_02_b.jpg" class="pirobox" title="WIN LOL"><img src="images/gallery/image_02.jpg" alt="2" /></a>
                     <a href="images/gallery/image_03_b.jpg" class="pirobox" title="Mejor Hermandad Ragnaros"><img src="images/gallery/image_03.jpg" alt="3" /></a>
                 </div>
-                
+
               <div class="cleaner h20"></div>
             </div>
-            
+
         </div>
-        
-        <div class="cleaner"></div>    
+
+        <div class="cleaner"></div>
     </div>
-    
+
     <div id="templatemo_main_bottom">
     </div>
 
@@ -283,7 +283,7 @@ mysql_free_result($result);
 
 <div id="templatemo_footer_wrapper">
 	<div id="templatemo_footer">
-        Copyright © 2014 <a href="index.php">Game Online</a> | 
+        Copyright © 2014 <a href="index.php">Game Online</a> |
         Designed by <a rel="nofollow" href="https://www.facebook.com/roberto.fernandez.9674" target="_parent">Roberto Fernandez</a> |
     </div>
 </div>
@@ -296,4 +296,4 @@ mysql_free_result($result);
             <?php
 			}
 		echo ("NO tiene PERMISO para este LINK")
-			?>       
+			?>

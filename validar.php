@@ -6,8 +6,8 @@ include('conex.php');
 include('funciones.php');
 
 $wsql="select * from usuarios where usuario='$login' and clave='$clave'";
-   		$resultado=mysql_query($wsql);
-   		$row=mysql_fetch_array($resultado);
+   		$resultado=mysqli_query($wsql);
+   		$row=mysqli_fetch_array($resultado);
 		if ($row==0)
 		{
 			$_SESSION['men']="Usuario no Existe";
@@ -29,8 +29,8 @@ $wsql="select * from usuarios where usuario='$login' and clave='$clave'";
 			$_SESSION['nivel']=$row['nivel'];
 			$_SESSION['usuario']=$row['usuario'];
 			redirect("index.php");
-			
-			
+
+
 		}
 
 
