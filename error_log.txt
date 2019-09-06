@@ -3,3 +3,7 @@
 [19-Jul-2014 21:04:03 Europe/Berlin] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in C:\xampp\htdocs\Games2\config.inc.php on line 8
 [19-Jul-2014 21:04:24 Europe/Berlin] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in C:\xampp\htdocs\Games2\conex.php on line 2
 [19-Jul-2014 21:06:06 Europe/Berlin] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in C:\xampp\htdocs\Games2\conex.php on line 2
+[02-Sep-2019 00:24:29 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in C:\xampp\htdocs\Games2\foro.php:226
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Games2\foro.php on line 226
